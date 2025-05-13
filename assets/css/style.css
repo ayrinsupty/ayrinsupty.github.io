@@ -398,7 +398,7 @@ body.dark .card-content .btn:hover {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-socials a:hover {
+.socials a:hover {
   color: var(--accent-color); /* Change color on hover */
   transform: scale(1.2); /* Slightly enlarge the icon */
 }
