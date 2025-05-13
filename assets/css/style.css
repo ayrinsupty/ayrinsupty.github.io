@@ -1,0 +1,913 @@
+:root {
+  --main-color: #2c3e50;
+  --accent-color: #b4975a;
+  --bg-color: #ffffff;
+  --light-gray: #f4f4f4;
+  --text-color: #333;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: var(--bg-color);
+  border-bottom: 1px solid #eaeaea;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* Add spacing between links */
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--main-color); /* Default text color */
+  text-decoration: none; /* Remove underline */
+  padding: 0.5rem 1rem; /* Add padding for better clickability */
+  border-radius: 5px; /* Rounded corners for hover effect */
+  position: relative; /* For animation */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%; /* Expand underline */
+  left: 0; /* Align underline to the left */
+}
+
+.nav-links a:hover {
+  color: var(--accent-color); /* Change text color on hover */
+  transform: translateY(-2px); /* Slightly lift the link */
+}
+
+body.dark .nav-links a {
+  color: #f1f1f1; /* Light text for dark mode */
+}
+
+body.dark .nav-links a:hover {
+  color: var(--accent-color); /* Accent color for hover in dark mode */
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--main-color); /* Default color for light mode */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent-color); /* Change color on hover */
+}
+
+/* Logo */
+.logo img {
+  max-height: 50px; /* Adjust the height of the logo */
+  width: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+}
+
+/* Dark Mode - Logo */
+body.dark .logo {
+  color: #f1f1f1; /* Light text for dark mode */
+}
+
+body.dark .logo:hover {
+  color: var(--accent-color); /* Accent color on hover in dark mode */
+}
+
+/* Dark Mode - Logo */
+body.dark .logo img {
+  filter: brightness(0.8); /* Slightly darken the logo for dark mode */
+}
+
+body.dark .logo img:hover {
+  filter: brightness(1); /* Restore brightness on hover */
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #2c3e50,
+    #b4975a
+  ); /* Gradient background */
+  color: #ffffff; /* Ensure text is white for better contrast */
+  text-align: center;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff; /* White text for better visibility */
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-content span {
+  color: var(--accent-color); /* Highlighted text with accent color */
+}
+
+.hero-content p {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f1f1f1; /* Light gray for better readability */
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.hero-content .btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content .btn:hover {
+  background-color: #a07d4a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content .btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+body.dark .hero {
+  background: linear-gradient(
+    135deg,
+    #1e1e1e,
+    #2c2c2c
+  ); /* Dark gradient background */
+}
+
+body.dark .hero-content h1,
+body.dark .hero-content p {
+  color: #f1f1f1; /* Light text for better visibility in dark mode */
+}
+
+body.dark .hero-content .btn {
+  background-color: var(--accent-color);
+  color: #1e1e1e; /* Dark text for contrast */
+}
+
+body.dark .hero-content .btn:hover {
+  background-color: #8c6e3e;
+  color: white;
+}
+
+.intro-text {
+  margin: 1rem 0 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  animation: zoomIn 1.5s ease-in-out;
+}
+
+/* Download CV Button */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem; /* Increase padding for a bigger button */
+  background-color: var(--accent-color); /* Use the accent color */
+  color: white; /* White text for contrast */
+  border-radius: 30px; /* Rounded corners for a modern look */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make the text bold */
+  font-family: var(--font-heading); /* Use the body font */
+  font-size: 1.2rem; /* Slightly increase font size */
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.btn:hover {
+  background-color: #a07d4a; /* Slightly darker accent color on hover */
+  transform: translateY(-3px); /* Lift the button slightly */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+}
+
+.btn:active {
+  transform: translateY(1px); /* Slightly press the button */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Reduce shadow */
+}
+
+.section {
+  padding: 4rem 0;
+  background-color: var(--bg-color);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.section h2 {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+body.dark .card {
+  background: #2a2a2a; /* Dark mode card background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adjust shadow for dark mode */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Adjust hover shadow for dark mode */
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+body.dark .card-content h3 {
+  color: #f1f1f1; /* Light text for dark mode */
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+body.dark .card-content p {
+  color: #cccccc; /* Light text for dark mode */
+}
+
+.card-content a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.card-content .btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark .card-content .btn {
+  background-color: var(--accent-color); /* Accent color for dark mode */
+  color: #1e1e1e; /* Dark text for contrast */
+}
+
+.card-content .btn:hover {
+  background-color: #a07d4a;
+  transform: scale(1.05);
+}
+
+body.dark .card-content .btn:hover {
+  background-color: #8c6e3e; /* Adjust hover background for dark mode */
+  color: #ffffff; /* Ensure text remains visible */
+}
+
+.contact {
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.socials a {
+  color: var(--main-color); /* Default color */
+  font-size: 1.5rem; /* Icon size */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+socials a:hover {
+  color: var(--accent-color); /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge the icon */
+}
+
+footer {
+  background-color: #eee;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Portfolio Section */
+#portfolio {
+  background: var(--bg-color); /* Light mode background */
+  padding: 4rem 0;
+}
+
+body.dark #portfolio {
+  background: #1e1e1e; /* Dark mode background */
+}
+
+.portfolio-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+body.dark .portfolio-intro {
+  color: #f1f1f1; /* Light text for dark mode */
+}
+
+/* About Me Section */
+.about {
+  background-color: var(--light-gray); /* Light background for contrast */
+  padding: 4rem 0;
+}
+
+.about h2 {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.about-text {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+  color: var(--accent-color); /* Highlight key terms */
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode */
+body.dark .about {
+  background-color: #1e1e1e; /* Dark mode background */
+}
+
+body.dark .about-text {
+  color: #f1f1f1; /* Light text for dark mode */
+}
+
+body.dark .about-text strong {
+  color: var(--accent-color); /* Keep accent color in dark mode */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+
+  .card-content .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .back-to-top {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+
+  .card-content .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Theme Toggle Switch */
+.theme-toggle-container {
+  position: relative; /* Ensure it aligns with the nav links */
+  margin-top: -10px; /* Move it slightly upward */
+  margin-left: 10px; /* Add spacing from the Contact link */
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  width: 70px;
+  height: 34px;
+  background: linear-gradient(to right, #ffc3a0, #e6c896);
+  border-radius: 40px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-icons {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 25px;
+  z-index: 2;
+  pointer-events: none;
+  color: white;
+  height: 100%;
+  align-items: center;
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.4s ease, background-color 0.3s;
+  z-index: 1;
+  left: 4px;
+  top: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+#themeToggle {
+  display: none;
+}
+
+#themeToggle:checked + .theme-toggle {
+  background: linear-gradient(to right, #2c3e50, #34495e);
+}
+
+#themeToggle:checked + .theme-toggle .toggle-thumb {
+  transform: translateX(34px);
+  background-color: var(--accent-color);
+}
+
+/* Base styles using relative units */
+.theme-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+}
+
+.theme-toggle {
+  width: 4.5rem;
+  height: 2.2rem;
+  background: linear-gradient(to right, #ffc3a0, #e6c896);
+  border-radius: 2rem;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.toggle-icons {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  z-index: 2;
+  pointer-events: none;
+  color: white;
+  height: 100%;
+  align-items: center;
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.4s ease, background-color 0.3s;
+  z-index: 1;
+  left: 0.3rem;
+  top: 0.3rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+#themeToggle {
+  display: none;
+}
+
+#themeToggle:checked + .theme-toggle {
+  background: linear-gradient(to right, #2c3e50, #34495e);
+}
+
+#themeToggle:checked + .theme-toggle .toggle-thumb {
+  transform: translateX(2.3rem); /* Responsive transform */
+  background-color: var(--accent-color);
+}
+
+@media (max-width: 400px) {
+  .theme-toggle-container {
+    padding: 0.5rem 1rem;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .toggle-thumb {
+    width: 1.4rem;
+    height: 1.4rem;
+    left: 0.3rem;
+    top: 0.3rem;
+  }
+
+  #themeToggle:checked + .theme-toggle .toggle-thumb {
+    transform: translateX(2rem);
+  }
+
+  .toggle-icons {
+    font-size: 0.5rem;
+  }
+}
+
+/* Dark Mode */
+body.dark .hero {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+body.dark header,
+body.dark .section,
+body.dark .contact,
+body.dark footer {
+  background-color: #1e1e1e;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #f1f1f1; /* Light text for dark background */
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark a {
+  color: #f1f1f1; /* Set a clear light color */
+}
+
+body.dark .nav-links a,
+body.dark .logo,
+body.dark .card-content h3,
+body.dark .card-content p {
+  color: #ffffff; /* Brighter text for specific sections */
+}
+
+body.dark .card-content a {
+  color: var(--accent-color); /* Explicitly set the same color in dark mode */
+}
+
+.btn:hover {
+  background-color: #a07d4a; /* Slightly darker background on hover */
+  color: #ffffff; /* Ensure text remains visible */
+}
+
+body.dark .btn:hover {
+  background-color: #8c6e3e; /* Adjust hover background for dark mode */
+  color: #f1f1f1; /* Ensure text remains visible in dark mode */
+}
+
+.theme-toggle-container {
+  position: fixed;
+  top: 20px; /* Adjust the position as needed */
+  right: 20px; /* Adjust the position as needed */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  padding: 10px; /* Optional: Add some padding */
+  box-shadow: none; /* Remove the shadow */
+  background-color: transparent; /* Remove the white background */
+  border-radius: 0; /* Remove the oval shape */
+}
+
+.theme-toggle-container:hover {
+  cursor: pointer;
+  background-color: transparent; /* Ensure no background on hover */
+}
+
+/* Hero Section Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Tags Section */
+.tags {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: var(--light-gray);
+  color: var(--main-color);
+  font-size: 0.9rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+/* Back-to-Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  display: none; /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #a07d4a; /* Slightly darker accent color */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.back-to-top:active {
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Dark Mode */
+body.dark .back-to-top {
+  background-color: var(--accent-color);
+  color: #1e1e1e; /* Dark text for contrast */
+}
+
+body.dark .back-to-top:hover {
+  background-color: #8c6e3e; /* Adjust hover background for dark mode */
+  color: white;
+}

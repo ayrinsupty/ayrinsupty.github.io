@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <meta
+      name="description"
+      content="Portfolio showcasing web development projects and skills."
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Developer, Web Developer, Portfolio, Projects"
+    />
+    <meta name="author" content="Ayrin Akter Supty" />
+
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="/assets/js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">AYRIN AKTER SUPTY</a>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+          <div class="theme-toggle-container">
+            <input type="checkbox" id="themeToggle" />
+            <label for="themeToggle" class="theme-toggle">
+              <div class="toggle-icons">
+                <span class="sun" style="margin-left: 5px">🔆</span>
+                <span class="moon" style="margin-right: 5px">🌙</span>
+              </div>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <h1 class="hero-title">Ayrin Akter Supty</h1>
+        <p class="intro-text">
+          Full Stack Developer | Data Science Enthusiast
+        </p>
+        <a href="Ayrin Akter Supty CV.pdf" class="btn" download>Download CV</a>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I am a passionate <strong>Full Stack Developer</strong> with
+              hands-on experience in building dynamic, user-friendly web
+              applications. With a solid foundation in both front-end and
+              back-end technologies, I've created several web-based solutions
+              that are both functional and scalable.
+            </p>
+            <p>
+              Currently, I'm expanding my skill set by diving into the world of
+              <strong>Data Science</strong>. I'm excited to explore how
+              data-driven insights can be integrated into web applications to
+              create smarter, more efficient solutions.
+            </p>
+            <p>
+              My goal is to continue evolving as a developer, combining my
+              expertise in web development with my growing knowledge of data
+              science to deliver innovative and impactful applications.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="/assets/images/my-photo.jpg" alt="About Me" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p class="portfolio-intro">
+          Here are some of my featured projects showcasing my skills in web
+          development and design.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="assets/images/portfolio/mx.png"
+                alt="Screenshot of MX Solutions"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>MX Solutions</h3>
+              <p>
+                A Laravel-based project that delivers affordable and efficient
+                solutions for managing sports associations, clubs, and
+                facilities.
+              </p>
+              <div class="tags">
+                <span class="tag">Laravel</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <a href="https://www.mxsolutions.it/" target="_blank" class="btn"
+                >Project</a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="assets/images/portfolio/superstoresales.png"
+                alt="Screenshot of Superstore Sales"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Superstore Sales</h3>
+              <p>
+                An interactive Streamlit dashboard for sales analysis, customer
+                segmentation, and high-profit order prediction using machine
+                learning.
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">pandas</span>
+                <span class="tag">Streamlit</span>
+              </div>
+              <a
+                href="https://salesanalysis-ebyr2u3wpdpfgm3dpdtd6k.streamlit.app/"
+                target="_blank"
+                class="btn"
+                >Project</a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="assets/images/portfolio/qbuy.png"
+                alt="Screenshot of QBUY ecommerce platform"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h3>QBUY</h3>
+              <p>
+                An ecommerce platform built with Laravel, featuring an intuitive
+                user interface and a powerful admin panel for managing products
+                and orders.
+              </p>
+              <div class="tags">
+                <span class="tag">Laravel</span>
+                <span class="tag">PHP</span>
+                <span class="tag">Livewire</span>
+              </div>
+              <a
+                href="https://github.com/ayrinsupty/laravel-ecommerce"
+                target="_blank"
+                class="btn"
+                >Project</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <p>Let's work together. You can reach me at</p>
+        <div class="socials">
+          <a
+            href="mailto:ayrinsupty@hotmail.com"
+            target="_blank"
+            aria-label="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ayrinsupty"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/ayrinsupty"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; <span id="currentYear"></span> - Ayrin Akter Supty. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+      ↑
+    </button>
+  </body>
+</html>
