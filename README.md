@@ -23,9 +23,6 @@ This site is built with:
 
 ## 📁 Repository Structure
 
-```bash
-📁 assets/         # Images, icons, and other media
-📁 css/            # Custom stylesheets
-📁 js/             # Scripts for interactivity
+📁 assets/         # css, js and Images
 📄 index.html      # Main landing page
 📄 README.md       # You're here!
