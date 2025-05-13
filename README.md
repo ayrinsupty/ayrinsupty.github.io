@@ -22,7 +22,7 @@ This site is built with:
 - **GitHub Pages** for hosting
 
 ## 📁 Repository Structure
-
+```bash
 📁 assets/         # css, js and Images
 📄 index.html      # Main landing page
 📄 README.md       # You're here!
